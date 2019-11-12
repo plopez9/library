@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import SearchBar from "./Search/SearchBar";
 import ReadingList from "./Favorites/Reading";
-import SearchList from "./Search/searchList";
+import SearchList from "./Lists/searchList";
 
 import './App.css';
 
@@ -34,6 +34,7 @@ class App extends Component {
   render(){
     let view, blob
 
+// Start of view code. If-Else statements render specific view components
     if(this.state.favorites){
 
       view = <ReadingList readingList={this.state.readingList}/>
@@ -53,6 +54,7 @@ class App extends Component {
         searchTerm={this.state.searchTerm}/>
       }
       }
+// End view components
 
     return (
       <div className="App">

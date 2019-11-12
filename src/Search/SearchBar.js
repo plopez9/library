@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import './searchbar.css';
+import './css/searchbar.css';
 import star from "../images/Favorites.png";
 
 class SearchBar extends Component {
@@ -32,12 +32,12 @@ class SearchBar extends Component {
     return(
       <div className="Search-container">
         <div className= "First-div">
-          <button
-          className = "Search-button"
-          onClick=
-            {this.changeSearch.bind(this)}
 
-          > Search </button>
+          <button
+          className= "Search-button"
+          onClick= {this.changeSearch.bind(this)}>
+          Search
+          </button>
 
           <input
           className="BookSearch"
@@ -48,20 +48,9 @@ class SearchBar extends Component {
           />
 
           <button
-          className = "Search-button"
-          onClick={this.favSet.bind(this)}
-          style = {{
-            background: "transparent",
-            border: "transparent",
-            width:"2%"
-          }}
-          >
-            <img src={star}
-              style={{
-                height:"100%",
-                width:"auto",
-              }}
-            />
+          className = "Favorites-button"
+          onClick={this.favSet.bind(this)}>
+            <img className="star" src={star}/>
           </button>
         </div>
 

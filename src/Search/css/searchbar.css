@@ -8,6 +8,15 @@
   opacity:0.91;
 }
 
+.Favorites-button {
+  background: transparent;
+  border: transparent;
+  border-radius: 10px;
+  height:55%;
+  width:10%;
+  min-width: 60px;
+}
+
 .First-div{
   height:70%;
   width: 80%;
@@ -34,4 +43,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.star{
+  height:100%;
+  width:auto;
 }

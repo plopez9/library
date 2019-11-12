@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import SearchTable from "./SearchTable"
 import owl from "../images/Owl.png";
 
+import './css/searchList.css';
+
 class SearchList extends Component {
   constructor(props){
     super(props)
@@ -11,26 +13,16 @@ class SearchList extends Component {
   render(){
     let view
 
+// Renders Owl for no data or Row items for searched terms
     if (this.props.searchTerm){
       view=<SearchTable data={this.props.blob}/>}
       else{
-        view=<img src={owl}
-          style={{
-            height:"60%",
-            width:"auto",
-            opacity:"0.6"
-          }}/>
+        view=<img className="owl" src={owl}/>
       }
 
 
     return(
-      <div style={{
-        height:"100%",
-        width:"100%",
-        display:"flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}>{view}</div>
+      <div className="view-div"> {view} </div>
     );
   }
 }

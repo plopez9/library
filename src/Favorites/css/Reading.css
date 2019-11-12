@@ -1,0 +1,9 @@
+.favorites-table {
+  width:100%;
+}
+
+.favorites-table-div {
+  height:99%;
+  width:99%;
+  display:flex;
+}

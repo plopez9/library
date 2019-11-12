@@ -1,0 +1,23 @@
+.add-button {
+  height:50%;
+  width:70px;
+  cursor:pointer;
+}
+
+.add-button-div {
+  height:100%;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.list-table{
+  width:100%;
+}
+
+.list-table-div {
+  height:99%;
+  width:99%;
+  display:flex;
+}

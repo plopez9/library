@@ -2,20 +2,14 @@ import React, { Component } from "react";
 import ReactTable from "react-table";
 
 import 'react-table/react-table.css';
-
-import star from "../images/Plus Icon.png";
+import './css/SearchTable.css';
 
 class SearchTable extends Component {
   constructor(props){
     super(props)
   }
-  state:{
-    test:[]
-  }
 
   render(){
-
-    console.log(this.state)
 
     const columns = [{
     Header: 'Author',
@@ -33,30 +27,15 @@ class SearchTable extends Component {
     Header: "Add",
     accessor: "add",
     Cell: row => (
-      <div style = {{
-        height:"100%",
-        width:"100%",
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center",
-      }}>
-        <button style={{
-          height:"50%",
-          width:"70px",
-          cursor:"pointer"
-        }}>
-           Add
-        </button>
+      <div className="add-button-div">
+        <button className="add-button"> Add </button>
       </div>)
   }]
 
     return(
-      <div style={{
-        height:"99%",
-        width:"99%",
-        display:"flex",
-      }}>
+      <div className="list-table-div">
       <ReactTable
+        className="list-table"
         columns={columns}
         data = {[{
           author:this.props.data.items[0].volumeInfo.authors,
@@ -79,8 +58,6 @@ class SearchTable extends Component {
             title:this.props.data.items[4].volumeInfo.title,
             publisher:this.props.data.items[4].volumeInfo.publisher},
         ]}
-        resolveData={data => data.map(row => row)}
-        style={{width:"100%"}}
         showPagination={false}
         defaultPageSize= {5}
         />

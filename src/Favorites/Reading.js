@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactTable from "react-table";
 
 import 'react-table/react-table.css';
+import './css/Reading.css';
 
 class ReadingList extends Component {
   constructor(props){
@@ -20,16 +21,11 @@ class ReadingList extends Component {
   }]
 
     return(
-      <div style={{
-        height:"99%",
-        width:"99%",
-        display:"flex",
-
-      }}>
+      <div className="favorites-table-div">
       <ReactTable
+        className="favorites-table"
         data={[{},{},{},{}]}
         columns={columns}
-        style={{width:"100%"}}
         pageSizeOptions = {[5, 10, 20]}
         defaultPageSize= {5}
         />
