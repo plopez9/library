@@ -6,7 +6,7 @@ This library web app utilizes the Google Books API to create a favorite book lis
 
 Installation for this library web app requires Node.js. To install Node, follow the documentation on the npmjs website (https://www.npmjs.com/get-npm). If Node is already installed, simply follow the following command.
 
-	>npm install Library
+	> npm install Library
 
 After installation, the library app can be called via command line. In the project directory run the npm start command. The project will then be accessable in your local port 3000 (http://localhost:3000/)
 
