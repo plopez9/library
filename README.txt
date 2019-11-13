@@ -19,4 +19,5 @@ The Library app comes with two primary functions. First is the search function l
 Currently there is no add feature to add row items to the favorites list. The add and subtract feature will be added to subsuquent patches later in the future.  
 
 ##Dead Code
+
 Two tables were created for the search list. This was the TempTable and SearchTable components. Both are in working state and can be accessed by commenting out its counter part, while keeping the intended table. The version that will be kept in the future will be the table that can be best implemented with the add favorites feature. 
