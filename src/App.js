@@ -47,7 +47,8 @@ class App extends Component {
 
         view = <SearchList
         searchTerm={this.state.searchTerm}
-        blob={blob}/>
+        blob={blob}
+        readingList={this.state.readingList}/>
 
       } else{
         view = <SearchList

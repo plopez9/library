@@ -26,6 +26,7 @@
   min-width: 400px;
   border-radius: 16px;
   opacity:0.91;
+  overflow: auto;
 }
 
 .Search-div{

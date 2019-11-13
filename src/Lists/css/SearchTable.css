@@ -1,7 +1,8 @@
 .add-button {
   height:50%;
-  width:70px;
+  width:50px;
   cursor:pointer;
+  border-radius: 5px;
 }
 
 .add-button-div {
