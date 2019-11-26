@@ -19,20 +19,19 @@ class TempTable extends Component {
 
   render(){
 
-    console.log(this.state.id)
 
     return(
       <div className="list-table-div" style={{display:"flex", alignItems:"center", justifyContent:"center", overflow:"auto"}}>
-        <table style={{height:"98%", width:"98%", overflow:"auto", textAlign:"center",}}>
+        <table style={{height:"98%", width:"98%", overflow:"auto", textAlign:"center"}}>
           <tbody>
 
           <tr className="List-Header" style={{width:"100%", height:"16.6%"}}>
-            <th> Title </th>
-            <th> Author</th>
+            <th> Author </th>
+            <th> Title</th>
             <th> Publisher </th>
             <th> Add </th>
           </tr>
-          
+
           <tr key={0} style={{background: "rgb(245,245,245)"}}>
             <td>
              {this.props.data.items[0].volumeInfo.authors}

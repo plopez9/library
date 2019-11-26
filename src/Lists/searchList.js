@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import SearchTable from "./SearchTable"
 import TempTable from "./Temporary"
 import owl from "../images/Owl.png";
 
@@ -16,7 +15,6 @@ class SearchList extends Component {
 
 // Renders Owl for no data or Row items for searched terms
     if (this.props.searchTerm){
-      // view=<SearchTable data={this.props.blob}/>}
       view = <TempTable data={this.props.blob}/>}
       else{
         view=<img className="owl" src={owl}/>

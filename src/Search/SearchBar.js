@@ -24,8 +24,14 @@ class SearchBar extends Component {
     .then(response => response.json())
     .then(json => {
       this.props.querySet(json)
-    });
+    }).catch(err => console.log(err));
   }
+
+  keyPressed(event){
+    if (event.key === "Enter"){
+      this.changeSearch()
+      }
+    }
 
   render(){
 
@@ -45,6 +51,7 @@ class SearchBar extends Component {
           placeholder = "Search Book Name or Author"
           value={this.state.searchEntry}
           onChange={(event)=> this.eventHandle(event)}
+          onKeyPress={this.keyPressed.bind(this)}
           />
 
           <button
