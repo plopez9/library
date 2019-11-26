@@ -8,17 +8,15 @@ class TempTable extends Component {
   }
 
   state = {
-    id:[]
+    id:""
   }
 
-  search_push(input){
-    this.setState({
-      id: false
-    })
+  update(input){
+    this.state.id.concat(input)
   }
 
   render(){
-
+    console.log(this.state)
 
     return(
       <div className="list-table-div" style={{display:"flex", alignItems:"center", justifyContent:"center", overflow:"auto"}}>
@@ -32,7 +30,7 @@ class TempTable extends Component {
             <th> Add </th>
           </tr>
 
-          <tr key={0} style={{background: "rgb(245,245,245)"}}>
+          <tr key={this.props.data.items[0].id} style={{background: "rgb(245,245,245)"}}>
             <td>
              {this.props.data.items[0].volumeInfo.authors}
             </td>
@@ -42,7 +40,15 @@ class TempTable extends Component {
             <td style={{width:"25%"}}>
             {this.props.data.items[0].volumeInfo.publisher}
             </td>
-            <td style={{width:"15%"}}> <button className="add-button"> add </button></td>
+            <td style={{width:"15%"}}>
+            <button className="add-button" onClick={() =>{
+              this.setState({id:
+                [this.props.data.items[0].volumeInfo.authors,
+                this.props.data.items[0].volumeInfo.title,
+                this.props.data.items[0].volumeInfo.publisher],
+              })
+            }}>
+            add</button></td>
           </tr>
 
           <tr key={1}>
