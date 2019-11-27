@@ -15,7 +15,7 @@ class SearchList extends Component {
 
 // Renders Owl for no data or Row items for searched terms
     if (this.props.searchTerm){
-      view = <TempTable data={this.props.blob}/>}
+      view = <TempTable data={this.props.blob} readingList={this.props.readingList}/>}
       else{
         view=<img className="owl" src={owl}/>
       }

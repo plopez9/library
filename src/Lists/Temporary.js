@@ -12,8 +12,14 @@ class TempTable extends Component {
   }
 
   update(input){
-    this.state.id.concat(input)
+    const {id} = this.state.id
+    const test = input
+
+    this.setState({
+      id: [...this.state.id, test]
+    })
   }
+
 
   render(){
     console.log(this.state)
@@ -42,11 +48,11 @@ class TempTable extends Component {
             </td>
             <td style={{width:"15%"}}>
             <button className="add-button" onClick={() =>{
-              this.setState({id:
+              this.update(
                 [this.props.data.items[0].volumeInfo.authors,
                 this.props.data.items[0].volumeInfo.title,
                 this.props.data.items[0].volumeInfo.publisher],
-              })
+              )
             }}>
             add</button></td>
           </tr>
@@ -61,7 +67,15 @@ class TempTable extends Component {
             <td style={{width:"25%"}}>
               {this.props.data.items[1].volumeInfo.publisher}
             </td>
-            <td style={{width:"15%"}}> <button className="add-button"> add </button></td>
+            <td style={{width:"15%"}}>
+            <button className="add-button" onClick={()=>{
+              this.update(
+                [this.props.data.items[1].volumeInfo.authors,
+                this.props.data.items[1].volumeInfo.title,
+                this.props.data.items[1].volumeInfo.publisher],
+              )
+            }}>
+             add </button></td>
           </tr>
 
           <tr key={2}  style={{background: "rgb(245,245,245)"}}>
@@ -74,7 +88,13 @@ class TempTable extends Component {
             <td style={{width:"25%"}}>
               {this.props.data.items[2].volumeInfo.publisher}
             </td>
-            <td style={{width:"15%"}}> <button className="add-button"> add </button></td>
+            <td style={{width:"15%"}}> <button className="add-button" onClick={()=>{
+              this.update(
+                [this.props.data.items[2].volumeInfo.authors,
+                this.props.data.items[2].volumeInfo.title,
+                this.props.data.items[2].volumeInfo.publisher],
+              )}}>
+             add </button></td>
           </tr>
 
           <tr key={3}>
@@ -87,7 +107,13 @@ class TempTable extends Component {
             <td style={{width:"25%"}}>
               {this.props.data.items[3].volumeInfo.publisher}
             </td>
-            <td style={{width:"15%"}}> <button className="add-button"> add </button></td>
+            <td style={{width:"15%"}}> <button className="add-button" onClick={()=>{
+              this.update(
+                [this.props.data.items[3].volumeInfo.authors,
+                this.props.data.items[3].volumeInfo.title,
+                this.props.data.items[3].volumeInfo.publisher],
+              )}}>
+             add </button></td>
           </tr>
 
           <tr key={4}  style={{background: "rgb(245,245,245)"}}>
@@ -100,7 +126,13 @@ class TempTable extends Component {
             <td style={{width:"25%"}}>
               {this.props.data.items[4].volumeInfo.publisher}
             </td>
-            <td style={{width:"15%"}}> <button className="add-button"> add </button></td>
+            <td style={{width:"15%"}}> <button className="add-button" onClick={()=>{
+              this.update(
+                [this.props.data.items[4].volumeInfo.authors,
+                this.props.data.items[4].volumeInfo.title,
+                this.props.data.items[4].volumeInfo.publisher],
+              )}}>
+            add </button></td>
           </tr>
           </tbody>
 
