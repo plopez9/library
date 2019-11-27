@@ -31,6 +31,15 @@ class App extends Component {
     })
   }
 
+  update_list(input){
+    const {list} = this.state.readingList
+    const test = input
+
+    this.setState({
+      readingList: [...this.state.readingList, test]
+    })
+  }
+
   render(){
     let view, blob
 
@@ -48,7 +57,7 @@ class App extends Component {
         view = <SearchList
         searchTerm={this.state.searchTerm}
         blob={blob}
-        readingList={this.state.readingList}/>
+        readingList={this.update_list.bind(this)}/>
 
       } else{
         view = <SearchList

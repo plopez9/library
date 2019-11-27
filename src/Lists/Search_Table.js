@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import './css/SearchTable.css';
 
-class TempTable extends Component {
+class SearchTable extends Component {
   constructor(props){
     super(props)
   }
@@ -13,21 +13,32 @@ class TempTable extends Component {
 
   update(input){
     const {id} = this.state.id
-    const test = input
+    const favorite = input
 
     this.setState({
-      id: [...this.state.id, test]
+      id: [...this.state.id, favorite]
+    }, () =>{
+      this.props.readingList(this.state.id)
     })
+  }
+
+  TableBody(){
+      return this.props.data.items.slice(0,5).map((items, index) => {
+        const counter = 0
+        return(console.log(items),
+      console.log(index))
+      })
   }
 
 
   render(){
-    console.log(this.state)
-
+    console.log(this.props)
     return(
       <div className="list-table-div" style={{display:"flex", alignItems:"center", justifyContent:"center", overflow:"auto"}}>
         <table style={{height:"98%", width:"98%", overflow:"auto", textAlign:"center"}}>
           <tbody>
+
+          {this.TableBody()}
 
           <tr className="List-Header" style={{width:"100%", height:"16.6%"}}>
             <th> Author </th>
@@ -142,4 +153,4 @@ class TempTable extends Component {
   }
 }
 
-export default TempTable
+export default SearchTable
