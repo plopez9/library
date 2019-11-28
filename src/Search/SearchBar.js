@@ -19,12 +19,13 @@ class SearchBar extends Component {
   }
 
   changeSearch(){
+    if(this.state.searchEntry !== ""){
     this.props.searchPush();
     fetch("https://www.googleapis.com/books/v1/volumes?q=" + this.state.searchEntry)
     .then(response => response.json())
     .then(json => {
       this.props.querySet(json)
-    }).catch(err => console.log(err));
+    }).catch(err => console.log(err));}
   }
 
   keyPressed(event){
@@ -41,7 +42,8 @@ class SearchBar extends Component {
 
           <button
           className= "Search-button"
-          onClick= {this.changeSearch.bind(this)}>
+          onClick= {this.changeSearch.bind(this)}
+          disabled={!this.state.searchEntry}>
           Search
           </button>
 

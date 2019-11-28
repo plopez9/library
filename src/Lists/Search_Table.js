@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import './css/SearchTable.css';
 
+import owl from "../images/Owl.png";
+
 class SearchTable extends Component {
   constructor(props){
     super(props)
@@ -23,131 +25,67 @@ class SearchTable extends Component {
   }
 
   TableBody(){
+    if (this.props.data.items !== undefined){
       return this.props.data.items.slice(0,5).map((items, index) => {
-        const counter = 0
-        return(console.log(items),
-      console.log(index))
-      })
-  }
-
-
-  render(){
-    console.log(this.props)
-    return(
-      <div className="list-table-div" style={{display:"flex", alignItems:"center", justifyContent:"center", overflow:"auto"}}>
-        <table style={{height:"98%", width:"98%", overflow:"auto", textAlign:"center"}}>
-          <tbody>
-
-          {this.TableBody()}
-
-          <tr className="List-Header" style={{width:"100%", height:"16.6%"}}>
-            <th> Author </th>
-            <th> Title</th>
-            <th> Publisher </th>
-            <th> Add </th>
-          </tr>
-
-          <tr key={this.props.data.items[0].id} style={{background: "rgb(245,245,245)"}}>
-            <td>
-             {this.props.data.items[0].volumeInfo.authors}
+        return(
+          <tr key={this.props.data.items[index].id} style={{background: "rgb(245,245,245)"}}>
+            <td style={{width:"30%"}}>
+             {this.props.data.items[index].volumeInfo.authors}
             </td>
-            <td>
-              {this.props.data.items[0].volumeInfo.title}
+            <td style={{width:"30%"}}>
+              {this.props.data.items[index].volumeInfo.title}
             </td>
             <td style={{width:"25%"}}>
-            {this.props.data.items[0].volumeInfo.publisher}
+            {this.props.data.items[index].volumeInfo.publisher}
             </td>
             <td style={{width:"15%"}}>
             <button className="add-button" onClick={() =>{
               this.update(
-                [this.props.data.items[0].volumeInfo.authors,
-                this.props.data.items[0].volumeInfo.title,
-                this.props.data.items[0].volumeInfo.publisher],
+                {id:this.props.data.items[index].id,
+                author:this.props.data.items[index].volumeInfo.authors,
+                title:this.props.data.items[index].volumeInfo.title,
+                publisher:this.props.data.items[index].volumeInfo.publisher},
               )
             }}>
             add</button></td>
           </tr>
+        )
+      })
+    }
+    }
 
-          <tr key={1}>
-            <td>
-             {this.props.data.items[1].volumeInfo.authors}
-            </td>
-            <td>
-              {this.props.data.items[1].volumeInfo.title}
-            </td>
-            <td style={{width:"25%"}}>
-              {this.props.data.items[1].volumeInfo.publisher}
-            </td>
-            <td style={{width:"15%"}}>
-            <button className="add-button" onClick={()=>{
-              this.update(
-                [this.props.data.items[1].volumeInfo.authors,
-                this.props.data.items[1].volumeInfo.title,
-                this.props.data.items[1].volumeInfo.publisher],
-              )
-            }}>
-             add </button></td>
-          </tr>
+  contents(){
+    if (this.props.data.items !== undefined){
+      return (
+      <table style={{height:"98%", width:"98%", overflow:"auto", textAlign:"center"}}>
+        <tbody>
 
-          <tr key={2}  style={{background: "rgb(245,245,245)"}}>
-            <td>
-             {this.props.data.items[2].volumeInfo.authors}
-            </td>
-            <td>
-              {this.props.data.items[2].volumeInfo.title}
-            </td>
-            <td style={{width:"25%"}}>
-              {this.props.data.items[2].volumeInfo.publisher}
-            </td>
-            <td style={{width:"15%"}}> <button className="add-button" onClick={()=>{
-              this.update(
-                [this.props.data.items[2].volumeInfo.authors,
-                this.props.data.items[2].volumeInfo.title,
-                this.props.data.items[2].volumeInfo.publisher],
-              )}}>
-             add </button></td>
-          </tr>
+        <tr className="List-Header" style={{width:"100%", height:"16.6%"}}>
+          <th> Author </th>
+          <th> Title</th>
+          <th> Publisher </th>
+          <th> Add </th>
+        </tr>
 
-          <tr key={3}>
-            <td>
-             {this.props.data.items[3].volumeInfo.authors}
-            </td>
-            <td>
-              {this.props.data.items[3].volumeInfo.title}
-            </td>
-            <td style={{width:"25%"}}>
-              {this.props.data.items[3].volumeInfo.publisher}
-            </td>
-            <td style={{width:"15%"}}> <button className="add-button" onClick={()=>{
-              this.update(
-                [this.props.data.items[3].volumeInfo.authors,
-                this.props.data.items[3].volumeInfo.title,
-                this.props.data.items[3].volumeInfo.publisher],
-              )}}>
-             add </button></td>
-          </tr>
+        {this.TableBody()}
 
-          <tr key={4}  style={{background: "rgb(245,245,245)"}}>
-            <td>
-             {this.props.data.items[4].volumeInfo.authors}
-            </td>
-            <td>
-              {this.props.data.items[4].volumeInfo.title}
-            </td>
-            <td style={{width:"25%"}}>
-              {this.props.data.items[4].volumeInfo.publisher}
-            </td>
-            <td style={{width:"15%"}}> <button className="add-button" onClick={()=>{
-              this.update(
-                [this.props.data.items[4].volumeInfo.authors,
-                this.props.data.items[4].volumeInfo.title,
-                this.props.data.items[4].volumeInfo.publisher],
-              )}}>
-            add </button></td>
-          </tr>
-          </tbody>
+        </tbody>
 
-        </table>
+    </table>)
+    } else{
+      return(
+        <div className="owl-table">
+            <img className="owl" src={owl}/>
+          <h1 style={{textAlign:"center", color:"rgb(97, 97, 97 )" }}> No Listings Found </h1>
+        </div>
+      )
+    }
+  }
+
+  render(){
+    return(
+      <div className="list-table-div">
+        {this.contents()}
       </div>
     );
   }

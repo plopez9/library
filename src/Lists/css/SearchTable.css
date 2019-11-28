@@ -1,6 +1,6 @@
 .add-button {
-  height:50%;
-  width:50px;
+  height:40px;
+  width:55px;
   cursor:pointer;
   border-radius: 5px;
 }
@@ -21,4 +21,16 @@
   height:99%;
   width:99%;
   display:flex;
+}
+
+.owl {
+  margin-right:7%;
+}
+
+.owl-table{
+  height:100%;
+  width:90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

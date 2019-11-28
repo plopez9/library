@@ -45,13 +45,11 @@ class App extends Component {
 
 // Start of view code. If-Else statements render specific view components
     if(this.state.favorites){
-
       view = <ReadingList readingList={this.state.readingList}/>
     }
 
     else{
       if(this.state.searchTerm){
-
         blob =this.state.searchTerm
 
         view = <SearchList
@@ -59,7 +57,8 @@ class App extends Component {
         blob={blob}
         readingList={this.update_list.bind(this)}/>
 
-      } else{
+      } 
+        else{
         view = <SearchList
         searchTerm={this.state.searchTerm}/>
       }
