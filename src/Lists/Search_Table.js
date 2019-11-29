@@ -18,7 +18,7 @@ class SearchTable extends Component {
     const favorite = input
 
     this.setState({
-      id: [...this.state.id, favorite]
+      id: favorite
     }, () =>{
       this.props.readingList(this.state.id)
     })
@@ -27,6 +27,7 @@ class SearchTable extends Component {
   TableBody(){
     if (this.props.data.items !== undefined){
       return this.props.data.items.slice(0,5).map((items, index) => {
+
         return(
           <tr key={this.props.data.items[index].id} style={{background: "rgb(245,245,245)"}}>
             <td style={{width:"30%"}}>
@@ -47,6 +48,7 @@ class SearchTable extends Component {
                 publisher:this.props.data.items[index].volumeInfo.publisher},
               )
             }}>
+
             add</button></td>
           </tr>
         )
@@ -83,6 +85,9 @@ class SearchTable extends Component {
   }
 
   render(){
+
+    console.log(this.props.readingList.id)
+
     return(
       <div className="list-table-div">
         {this.contents()}

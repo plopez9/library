@@ -9,15 +9,8 @@ class ReadingList extends Component {
     super(props)
   }
 
-  TableBody(){
-    let counter = -1
-      return this.props.readingList.map((item)=>{
-        counter = counter+1
-        return(item[counter])
-      })}
-
   render(){
-    console.log(this.TableBody())
+    console.log(this.props.readingList)
     const columns = [{
     Header: 'Author',
     accessor: "author",
@@ -33,8 +26,8 @@ class ReadingList extends Component {
       <div className="favorites-table-div">
       <ReactTable
         className="favorites-table"
-        data={this.TableBody()}
         columns={columns}
+        data = {this.props.readingList}
         pageSizeOptions = {[5, 10, 20]}
         defaultPageSize= {5}
         />

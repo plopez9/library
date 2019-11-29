@@ -57,7 +57,7 @@ class App extends Component {
         blob={blob}
         readingList={this.update_list.bind(this)}/>
 
-      } 
+      }
         else{
         view = <SearchList
         searchTerm={this.state.searchTerm}/>

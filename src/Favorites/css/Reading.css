@@ -7,3 +7,40 @@
   width:99%;
   display:flex;
 }
+
+.list-table{
+  width:100%;
+}
+
+.list-table-div {
+  height:99%;
+  width:99%;
+  display:flex;
+}
+
+.owl {
+  margin-right:7%;
+}
+
+.owl-table{
+  height:100%;
+  width:90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-button {
+  height:40px;
+  width:55px;
+  cursor:pointer;
+  border-radius: 5px;
+}
+
+.remove-button-div {
+  height:100%;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
