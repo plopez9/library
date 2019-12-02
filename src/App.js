@@ -75,7 +75,7 @@ class App extends Component {
       <div className="App">
         <div className="Containment-div">
           <div className ="Search-div">
-            <SearchBar
+            <SearchBar className = "AppSearch"
             querySet={this.termSelect.bind(this)}
             favSet = {this.favorite_push.bind(this)}
             searchPush ={this.search_push.bind(this)}/>

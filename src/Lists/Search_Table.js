@@ -67,7 +67,8 @@ class SearchTable extends Component {
   contents(){
     if (this.props.data.items !== undefined){
       return (
-      <table style={{height:"98%", width:"98%", overflow:"auto", textAlign:"center"}}>
+      <table className="Results-Table"
+        style={{height:"98%", width:"98%", overflow:"auto", textAlign:"center"}}>
         <tbody>
 
         <tr className="List-Header" style={{width:"100%", height:"16.6%"}}>
