@@ -22,6 +22,13 @@ class SearchTable extends Component {
     }, () =>{
       this.props.readingList(this.state.id)
     })
+
+
+  }
+
+ listCheck(){
+    const check = this.props.list
+    return console.log("worked")
   }
 
   TableBody(){
@@ -29,6 +36,7 @@ class SearchTable extends Component {
       return this.props.data.items.slice(0,5).map((items, index) => {
 
         return(
+
           <tr key={this.props.data.items[index].id} style={{background: "rgb(245,245,245)"}}>
             <td style={{width:"30%"}}>
              {this.props.data.items[index].volumeInfo.authors}
@@ -85,8 +93,6 @@ class SearchTable extends Component {
   }
 
   render(){
-
-    console.log(this.props.readingList.id)
 
     return(
       <div className="list-table-div">

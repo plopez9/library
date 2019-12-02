@@ -10,7 +10,7 @@ class ReadingList extends Component {
   }
 
   render(){
-    console.log(this.props.readingList)
+
     const columns = [{
     Header: 'Author',
     accessor: "author",

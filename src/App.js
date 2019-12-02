@@ -40,12 +40,17 @@ class App extends Component {
     })
   }
 
+  remove_list(input){
+    console.log(input)
+  }
+
   render(){
     let view, blob
 
 // Start of view code. If-Else statements render specific view components
     if(this.state.favorites){
-      view = <ReadingList readingList={this.state.readingList}/>
+      view = <ReadingList readingList={this.state.readingList}
+      remove = {this.remove_list.bind(this)}/>
     }
 
     else{
@@ -55,7 +60,8 @@ class App extends Component {
         view = <SearchList
         searchTerm={this.state.searchTerm}
         blob={blob}
-        readingList={this.update_list.bind(this)}/>
+        readingList={this.update_list.bind(this)}
+        list = {this.state.readingList}/>
 
       }
         else{
