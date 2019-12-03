@@ -15,7 +15,9 @@ class SearchList extends Component {
 
 // Renders Owl for no data or Row items for searched terms
     if (this.props.searchTerm){
-      view = <SearchTable data={this.props.blob}
+      view = <SearchTable
+      className = "SearchSwitch"
+      data={this.props.searchTerm}
       readingList={this.props.readingList}
       list = {this.props.list}/>}
       else{

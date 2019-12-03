@@ -45,7 +45,7 @@ class App extends Component {
   }
 
   render(){
-    let view, blob
+    let view
 
 // Start of view code. If-Else statements render specific view components
     if(this.state.favorites){
@@ -55,11 +55,9 @@ class App extends Component {
 
     else{
       if(this.state.searchTerm){
-        blob =this.state.searchTerm
 
         view = <SearchList
         searchTerm={this.state.searchTerm}
-        blob={blob}
         readingList={this.update_list.bind(this)}
         list = {this.state.readingList}/>
 
@@ -75,7 +73,8 @@ class App extends Component {
       <div className="App">
         <div className="Containment-div">
           <div className ="Search-div">
-            <SearchBar className = "AppSearch"
+            <SearchBar
+            className="SearchBar"
             querySet={this.termSelect.bind(this)}
             favSet = {this.favorite_push.bind(this)}
             searchPush ={this.search_push.bind(this)}/>
