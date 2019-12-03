@@ -26,13 +26,8 @@ class SearchTable extends Component {
 
   }
 
- listCheck(){
-    const check = this.props.list
-    return console.log("worked")
-  }
-
   TableBody(){
-    if (this.props.data.items !== undefined){
+    if (this.props.data !== undefined){
       return this.props.data.items.slice(0,5).map((items, index) => {
 
         return(

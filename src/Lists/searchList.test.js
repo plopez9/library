@@ -3,14 +3,17 @@ import { shallow } from "enzyme"
 
 import SearchList from "./searchList"
 
-const favorites = (props={}) =>{
-  const component = shallow(<SearchList {...props}/>)
-  console.log(component.debug())
-  return component
-}
+describe("Search List Conditional Render", () => {
 
+  describe("Empty Owl", () => {
 
-describe("Conditional Render", () => {
+    it ("Should Return Owl Image", () => {
+      const component = shallow(<SearchList />)
+      const wrapper = component.find(".owl")
+      expect(wrapper.length).toBe(1)
+    })
+
+  })
 
   describe("Search Table", () => {
 
@@ -36,13 +39,4 @@ describe("Conditional Render", () => {
 
   })
 
-  describe("Empty Owl", () => {
-
-    it ("Should Return Owl Image", () => {
-      const component = shallow(<SearchList />)
-      const wrapper = component.find(".owl")
-      expect(wrapper.length).toBe(1)
-    })
-
-  })
 })

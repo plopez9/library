@@ -1,0 +1,59 @@
+import React from "react"
+import { shallow } from "enzyme"
+
+import SearchTable from "./Search_Table"
+
+describe("Conditional Search Table", () => {
+
+  describe("No listings Owl", () => {
+
+    let wrapper
+
+    const beforeTest = ()=> {
+      const props = {
+        data:{kind:"books#volumes",
+              totalIems:0}
+      }
+
+      const search = (setProps={}) =>{
+        const component = shallow(<SearchTable {...props}/>)
+        const wrapper = component.find(".owl-table")
+        return wrapper
+      }
+      expect(search().length).toBe(1)
+    }
+
+    it ("Should Return No Listings Owl", () => {
+      beforeTest()
+    })
+  })
+
+
+  describe("Search Table Results", ()=>{
+    let wrapper
+
+    const beforeTest = ()=> {
+      const props = {
+        data:{items:[
+          {id:123, volumeInfo:{authors:"John", title:"book", publisher:"dummy"}},
+          {id:456, volumeInfo:{authors:"John", title:"book", publisher:"dummy"}},
+          {id:789, volumeInfo:{authors:"John", title:"book", publisher:"dummy"}},
+          {id:876, volumeInfo:{authors:"John", title:"book", publisher:"dummy"}},
+          {id:543, volumeInfo:{authors:"John", title:"book", publisher:"dummy"}},
+        ]}
+      }
+
+      const search = (setProps={}) =>{
+        const component = shallow(<SearchTable {...props}/>)
+        const wrapper = component.find(".List-Header")
+        return wrapper
+      }
+      expect(search().length).toBe(1)
+    }
+
+    it ("Should Return Search Listings", () => {
+      beforeTest()
+    })
+  })
+
+})

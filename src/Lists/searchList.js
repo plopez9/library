@@ -20,6 +20,7 @@ class SearchList extends Component {
       data={this.props.searchTerm}
       readingList={this.props.readingList}
       list = {this.props.list}/>}
+      
       else{
         view=<img className="owl" src={owl}/>
       }

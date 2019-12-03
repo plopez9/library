@@ -33,15 +33,11 @@ class App extends Component {
 
   update_list(input){
     const {list} = this.state.readingList
-    const test = input
+    const newItem = input
 
     this.setState({
-      readingList: [...this.state.readingList, test]
+      readingList: [...this.state.readingList, newItem]
     })
-  }
-
-  remove_list(input){
-    console.log(input)
   }
 
   render(){
@@ -49,23 +45,16 @@ class App extends Component {
 
 // Start of view code. If-Else statements render specific view components
     if(this.state.favorites){
-      view = <ReadingList readingList={this.state.readingList}
-      remove = {this.remove_list.bind(this)}/>
+      view = <ReadingList
+      className="favoritesList" readingList={this.state.readingList}/>
     }
 
     else{
-      if(this.state.searchTerm){
-
-        view = <SearchList
-        searchTerm={this.state.searchTerm}
-        readingList={this.update_list.bind(this)}
-        list = {this.state.readingList}/>
-
-      }
-        else{
-        view = <SearchList
-        searchTerm={this.state.searchTerm}/>
-      }
+      view = <SearchList
+      className="SearchList"
+      searchTerm={this.state.searchTerm}
+      readingList={this.update_list.bind(this)}
+      list = {this.state.readingList}/>
       }
 // End view components
 
