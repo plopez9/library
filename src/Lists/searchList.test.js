@@ -3,11 +3,11 @@ import { shallow } from "enzyme"
 
 import SearchList from "./searchList"
 
-describe("Search List Conditional Render", () => {
+describe("Search List Conditional Render Component", () => {
 
   describe("Empty Owl", () => {
 
-    it ("Should Return Owl Image", () => {
+    it ("It Should Render an Owl Image", () => {
       const component = shallow(<SearchList />)
       const wrapper = component.find(".owl")
       expect(wrapper.length).toBe(1)
@@ -33,7 +33,7 @@ describe("Search List Conditional Render", () => {
       expect(favorites().length).toBe(1)
     }
 
-    it ("Should Return Search Table", () => {
+    it ("It Should Render the Search Table", () => {
       beforeTest()
     })
 

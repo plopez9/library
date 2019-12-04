@@ -3,7 +3,7 @@ import { shallow } from "enzyme"
 
 import SearchTable from "./Search_Table"
 
-describe("Conditional Search Table", () => {
+describe("Conditional Search Table Component", () => {
 
   describe("No listings Owl", () => {
 
@@ -23,13 +23,13 @@ describe("Conditional Search Table", () => {
       expect(search().length).toBe(1)
     }
 
-    it ("Should Return No Listings Owl", () => {
+    it ("It Should Render a No Listings Owl", () => {
       beforeTest()
     })
   })
 
 
-  describe("Search Table Results", ()=>{
+  describe("It Should Return the Search Table Results", ()=>{
     let wrapper
 
     const beforeTest = ()=> {
@@ -51,7 +51,7 @@ describe("Conditional Search Table", () => {
       expect(search().length).toBe(1)
     }
 
-    it ("Should Return Search Listings", () => {
+    it ("It Should Render Search Listings", () => {
       beforeTest()
     })
   })
