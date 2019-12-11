@@ -13,6 +13,15 @@ class SearchTable extends Component {
     id:""
   }
 
+  disableButton(item){
+    const checkList = this.props.list
+
+    return !!checkList.find((input)=>{
+      return item.id === input.id
+    })
+
+  }
+
   update(input){
     const {id} = this.state.id
     const favorite = input
@@ -28,29 +37,30 @@ class SearchTable extends Component {
 
   TableBody(){
     if (this.props.data !== undefined){
-      return this.props.data.items.slice(0,5).map((items, index) => {
+      return this.props.data.items.slice(0,5).map((item) => {
 
         return(
 
-          <tr key={this.props.data.items[index].id} style={{background: "rgb(245,245,245)"}}>
+          <tr key={item.id} style={{background: "rgb(245,245,245)"}}>
             <td style={{width:"30%"}}>
-             {this.props.data.items[index].volumeInfo.authors}
+             {item.volumeInfo.authors}
             </td>
             <td style={{width:"30%"}}>
-              {this.props.data.items[index].volumeInfo.title}
+              {item.volumeInfo.title}
             </td>
             <td style={{width:"25%"}}>
-            {this.props.data.items[index].volumeInfo.publisher}
+            {item.volumeInfo.publisher}
             </td>
             <td style={{width:"15%"}}>
             <button className="add-button" onClick={() =>{
               this.update(
-                {id:this.props.data.items[index].id,
-                author:this.props.data.items[index].volumeInfo.authors,
-                title:this.props.data.items[index].volumeInfo.title,
-                publisher:this.props.data.items[index].volumeInfo.publisher},
+                {id:item.id,
+                author:item.volumeInfo.authors,
+                title:item.volumeInfo.title,
+                publisher:item.volumeInfo.publisher},
               )
-            }}>
+            }}
+              disabled = {this.disableButton(item)}>
 
             add</button></td>
           </tr>

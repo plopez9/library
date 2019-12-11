@@ -32,8 +32,14 @@ class App extends Component {
   }
 
   update_list(input){
-    const {list} = this.state.readingList
+    const list = this.state.readingList
     const newItem = input
+
+    if(list.find((listItem) =>{
+      return listItem.id === newItem.id
+    })) {
+      return
+    }
 
     this.setState({
       readingList: [...this.state.readingList, newItem]

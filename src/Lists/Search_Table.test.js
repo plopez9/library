@@ -40,7 +40,8 @@ describe("Conditional Search Table Component", () => {
           {id:789, volumeInfo:{authors:"John", title:"book", publisher:"dummy"}},
           {id:876, volumeInfo:{authors:"John", title:"book", publisher:"dummy"}},
           {id:543, volumeInfo:{authors:"John", title:"book", publisher:"dummy"}},
-        ]}
+        ]},
+        list: [],
       }
 
       const search = (setProps={}) =>{
